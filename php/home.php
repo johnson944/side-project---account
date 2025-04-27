@@ -55,16 +55,23 @@ $result = mysqli_query($conn, $sql);
 
         <?php
           while ($row = mysqli_fetch_assoc($result)) {
-              echo "<tr>";
-              echo "<td>".$row['date']."</td>";
-              echo "<td>".$row['note']."</td>";
-              echo "<td>".$row['amount']."</td>";
-              echo "<td>";
-              echo "<a href='delete_record.php?id=".$row['id']."' onclick='return confirm(\"確定要刪除嗎？\")'>刪除</a>";
-              echo "</td>";
-              echo "</tr>";
+            echo "<tr>";
+            echo "<td>".$row['date']."</td>";
+            echo "<td>".$row['note']."</td>";
+            echo "<td>".$row['amount']."</td>";
+            echo "<td>";
+
+            echo "<form action='update_record.php' method='post' style='display:inline;'>";
+            echo "<input type='hidden' name='id' value='".$row['id']."'>";
+            echo "<button type='submit'>編輯</button>";
+            echo "</form>";
+            echo "<br>";
+            echo "<a href='delete_record.php?id=".$row['id']."' onclick='return confirm(\"確定要刪除嗎？\")'>刪除</a>";
+            echo "</td>";
+            echo "</tr>";
           }
         ?>
+
     </table>
 </body>
 </html>
