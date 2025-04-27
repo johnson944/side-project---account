@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>註冊</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1 class="main-title">記 帳 系 統</h1>
+  <div class="login-container">
+    <h2>創建帳號</h2>
+    <form class="login-form" action="/php/register.php" method="post">
+      <label for="username">帳號：</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">密碼：</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">註冊</button>
+    </form>
+    <div class="register-link">
+      <a href="index.html">已有帳號？立即登入</a>
+    </div>
+  </div>
+</body>
+</html>
